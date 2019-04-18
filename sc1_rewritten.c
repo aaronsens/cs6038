@@ -4,8 +4,8 @@ void rotate(char* param_1, int param_2)
 {   int i = 0;
     //void *pvVar1; --> memcopy??? 
     char temp[param_2];
-    while(i <= param_2) {
-      temp[i] = param_1[param_2 + i -1]; 
+    while(i < param_2) {
+      temp[i] = param_1[param_2 - i -1]; 
        i +=1;
     }
 
@@ -21,9 +21,9 @@ void rotate(char* param_1, int param_2)
 void xor(char* param_1,unsigned int param_2,char* param_3,unsigned int param_4)
 {
    int i = 0;
-   while(i<=param_2) {
+   while(i<param_2) {
 
-       param_1[i] = param_1[i]^(param_3[i] +(i%param_4));
+       param_1[i] = param_1[i]^(param_3[i%param_4]);
        i +=1;
    }
 
@@ -34,8 +34,8 @@ void add(char* param_1,unsigned int param_2, char* param_3, unsigned int param_4
 {
     int i = 0;
 
-    while(i <=param_2) {
-       param_1[i] = param_1[i] + (i%param_4);
+    while(i <param_2) {
+       param_1[i] = param_1[i] + param_3[i%param_4];
        i +=1;
     }
     return;
